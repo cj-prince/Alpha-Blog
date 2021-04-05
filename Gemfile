@@ -9,16 +9,9 @@ gem 'rails', '~> 6.1.3'
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
-<<<<<<< HEAD
 # Use SCSS for stylesheets
-gem 'bootstrap', '~> 5.0.0.beta2'
-=======
->>>>>>> 8c184012ba4d5ffe91c2a3879b012d7892cf5c23
 gem 'sass-rails', '>= 6'
 gem 'bootstrap', '~> 5.0.0.beta2'
-gem 'jquery-rails'
-gem 'sprockets', '~> 4.0', '>= 4.0.2'
-
 
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 5.0'
