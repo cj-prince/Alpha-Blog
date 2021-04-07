@@ -1,14 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<h1 align='center'>
   <strong>Username:</strong>
   <%= @user.username %>
-</p>
+</h1>
 
-<p>
+<div class="row">
+  <div align="center">
+    <%= gravtar_for @user %>
+  </div>
+</div>
+
+<h4 align='center'>
   <strong>Email:</strong>
   <%= @user.email %>
-</p>
+</h4>
+
+<%= render 'articles/article', obj: @user.articles %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
