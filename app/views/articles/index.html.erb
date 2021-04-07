@@ -2,9 +2,11 @@
 
 <h1 align='center'>Articles</h1>
 
-
-
 <%= render 'article', obj: @articles %>
+<div align='center'>
+    <%= will_paginate @article, renderer: BootstrapPagination::Rails %>
+</div>
+
 
 <br>
 

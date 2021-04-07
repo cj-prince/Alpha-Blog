@@ -18,6 +18,7 @@
     </ul>
   <% end %>
 </div>
+<%= will_paginate @article, renderer: BootstrapPagination::Rails %>
 <br>
 
 <%= link_to 'New User', new_user_path %>
