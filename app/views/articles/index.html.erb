@@ -9,6 +9,7 @@
 
 
 <br>
-
-<%= link_to 'New Article', new_article_path %> |
+<% if logged_in && current_user == @article.user %>
+    <%= link_to 'New Article', new_article_path %> |
+<% end %>
 <%= link_to 'Home', root_path %>

@@ -12,11 +12,13 @@
               </small>
             </div>
         </div>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <%= link_to 'Edit', edit_article_path(article), class: "btn btn-sm btn-primary" %> |
-          <%= link_to 'Delete', article_path(article), method: :delete, 
-                                  data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %>
-        </div>
+        <% if logged_in && current_user == article.user %>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <%= link_to 'Edit', edit_article_path(article), class: "btn btn-sm btn-primary" %> |
+            <%= link_to 'Delete', article_path(article), method: :delete, 
+                                    data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %>
+          </div>
+        <<% end %>
  
   </div>
 <% end %>
