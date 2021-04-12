@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-    helper_method :current_user, :logged_in
+    helper_method :current_user, :logged_in, :sign_in
     def current_user
         @current_user ||= User.find(session[:user_id]) if session[:user_id] 
     end
@@ -15,5 +15,12 @@ class ApplicationController < ActionController::Base
             redirect_to root_path
         end
     end
+
+    def sign_in(user, password)
+        if authed = user.authenticate(password)
+            session[:user_id] = authed.id     
+        end    
+        authed
+    end    
 
 end

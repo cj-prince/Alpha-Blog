@@ -40,6 +40,7 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1 or /users/1.json
   def update
+    binding.pry
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: "User was successfully updated." }
@@ -80,7 +81,7 @@ class UsersController < ApplicationController
     end
 
     def require_admin
-      if logged_in and current_user.admin
+      unless logged_in and current_user.admin
         flash[:danger] = 'only admin users can'
         redirect_to root_path
       end
